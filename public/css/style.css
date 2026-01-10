@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* Enhanced CSS Variables for Modern Design System */
 :root {
     --primary-color: #e74c3c; /* Vibrant red with better accessibility */
-    --primary-hover: #c0392b; /* Deeper red for hover states */
+    --primary-hover: #917774; /* Deeper red for hover states */
     --primary-light: #ff6b6b; /* Lighter red for accents */
     --secondary-color: #3498db; /* Modern blue */
     --secondary-hover: #2980b9; /* Deeper blue */
@@ -651,6 +653,8 @@ button:focus,
     color: #222222;
     line-height: 1.4;
 }
+
+
 
 .listing-price {
     font-weight: 700;

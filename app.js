@@ -16,12 +16,6 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
-// Global request logging
-app.use((req, res, next) => {
-  console.log("🔥 REQUEST HIT:", req.method, req.path);
-  next();
-});
-
 // Routes
 const listingRouter = require("./routes/listing.js");
 const categoryRouter = require("./routes/category.js");
@@ -94,14 +88,10 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Flash messages middleware
-// IMPORTANT: req.flash() returns an array, even when empty.
-// We use [0] to get the first message, or undefined if empty.
-// The EJS templates now check for array length > 0 to avoid empty array truthiness.
 app.use((req, res, next) => {
     const successMessages = req.flash("success");
     const errorMessages = req.flash("error");
     
-    // Store both the full array (for legacy compatibility) and the first message
     res.locals.success = successMessages;
     res.locals.error = errorMessages;
     res.locals.successMessage = successMessages[0];
@@ -127,9 +117,7 @@ app.all("*", (req, res, next) => {
 
 // Error handling for listing routes
 app.use((err, req, res, next) => {
-  console.log("GLOBAL ERROR HANDLER:", err.name, err.message);
   let { statusCode = 500, message = "Something went wrong" } = err;
-  console.log("Error:", statusCode, message);
   
   if (res.headersSent) {
     return next(err);

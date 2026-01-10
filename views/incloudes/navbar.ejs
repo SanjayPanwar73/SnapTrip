@@ -13,30 +13,16 @@
 
     <!-- Search Bar - Centered -->
     <div class="search-container">
-      <div class="modern-search-form">
-        <div class="search-field">
-          <span class="search-label">Where</span>
-          <input type="text" class="search-input" placeholder="Search destinations" />
+      <form action="/listings" method="GET" class="modern-search-form">
+        <div class="search-field search-field-large">
+          <input type="text" name="q" class="search-input" 
+                 placeholder="Search listings by title, city, or country..." 
+                 value="<%= typeof q !== 'undefined' ? q : '' %>" />
         </div>
-        <div class="search-divider"></div>
-        <div class="search-field">
-          <span class="search-label">Check in</span>
-          <input type="text" class="search-input" placeholder="Add dates" onfocus="(this.type='date')" />
-        </div>
-        <div class="search-divider"></div>
-        <div class="search-field">
-          <span class="search-label">Check out</span>
-          <input type="text" class="search-input" placeholder="Add dates" onfocus="(this.type='date')" />
-        </div>
-        <div class="search-divider"></div>
-        <div class="search-field guests-field">
-          <span class="search-label">Who</span>
-          <input type="text" class="search-input" placeholder="Add guests" />
-        </div>
-        <button class="search-submit-btn" aria-label="Search">
+        <button type="submit" class="search-submit-btn" aria-label="Search">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-      </div>
+      </form>
     </div>
 
     <!-- Right Section -->
@@ -89,10 +75,10 @@
 
   <!-- Mobile Search -->
   <div class="mobile-search-bar">
-    <div class="mobile-search-input">
+    <form action="/listings" method="GET" class="mobile-search-input">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Where to?" />
-    </div>
+      <input type="text" name="q" placeholder="Search listings..." value="<%= typeof q !== 'undefined' ? q : '' %>" />
+    </form>
   </div>
 </nav>
 
@@ -213,5 +199,4 @@
     new ModernNavbar();
   });
 </script>
-
 
