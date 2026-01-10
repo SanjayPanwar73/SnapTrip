@@ -1,0 +1,27 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const newsletterSchema = new Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        lowercase: true,
+        trim: true
+    },
+    subscribedAt: {
+        type: Date,
+        default: Date.now
+    },
+    isActive: {
+        type: Boolean,
+        default: true
+    }
+});
+
+// Add indexes for better query performance
+newsletterSchema.index({ email: 1 });
+newsletterSchema.index({ isActive: 1 });
+newsletterSchema.index({ subscribedAt: -1 });
+
+module.exports = mongoose.model("Newsletter", newsletterSchema);

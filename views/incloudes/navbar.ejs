@@ -1,84 +1,217 @@
-<style>
-  .search-btn {
-    background-color: #fe424d;
-    color: #fff;
-    border-radius: 25px;
-    padding: 0 1rem 0 1rem;
-  }
 
-  .search-btn:hover {
-    background-color: #fe424d;
-    color: #fff;
-  }
-  .search-btn i {
-    display: inline;
-    margin-right: 0.5rem;
-  }
 
-  .search-inp {
-    border-radius: 25px;
-    padding: 0.5rem 3rem 0.5rem 3rem;
-    font-size: 1rem;
-  }
-
-  a i{
-    color: #fe424d;
-  }
-</style>
-
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="container-fluid">
+<!-- Modern Navbar -->
+<nav class="modern-navbar navbar navbar-expand-lg fixed-top" id="mainNavbar">
+  <div class="navbar-container">
+    <!-- Logo Section -->
     <a class="navbar-brand" href="/listings">
-      <!-- <i class="fa-regular fa-compass"></i> -->
-       <i class="fa-brands fa-sitrox"></i>
+      <div class="brand-icon">
+        <i class="fa-brands fa-sitrox"></i>
+      </div>
+      <span class="brand-text">SnapTrip</span>
     </a>
-    
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/listings">Explore</a>
+
+    <!-- Search Bar - Centered -->
+    <div class="search-container">
+      <div class="modern-search-form">
+        <div class="search-field">
+          <span class="search-label">Where</span>
+          <input type="text" class="search-input" placeholder="Search destinations" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <span class="search-label">Check in</span>
+          <input type="text" class="search-input" placeholder="Add dates" onfocus="(this.type='date')" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <span class="search-label">Check out</span>
+          <input type="text" class="search-input" placeholder="Add dates" onfocus="(this.type='date')" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field guests-field">
+          <span class="search-label">Who</span>
+          <input type="text" class="search-input" placeholder="Add guests" />
+        </div>
+        <button class="search-submit-btn" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </div>
+    </div>
 
-    
+    <!-- Right Section -->
+    <div class="navbar-actions">
+      <a href="/listings/new" class="host-link">SnapTrip your home</a>
+      
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
 
-      <div class="navbar-nav ms-auto">
-        <form action="/listings" role="search" method="GET" class="d-flex">
-          <% if (typeof category !== 'undefined' && category) { %>
-          <input type="hidden" name="category" value="<%= category %>" />
-          <% } %>
-
-          <input
-            class="form-control me-2 search-inp"
-            type="search"
-            name="q"
-            placeholder="Search by title, location, or description..."
-            value="<%= typeof q !== 'undefined' ? q : '' %>"
-          />
-          <button class="btn search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
-          </button>
-        </form>
-      </div>
-
-      <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+      <!-- Auth Buttons -->
+      <div class="auth-buttons">
         <% if(!currUser) {%>
-        <a class="nav-link" href="/signup"><b>Sign up</b></a>
-        <a class="nav-link" href="/login"><b>Log in</b></a>
-        <% } %><% if(currUser) {%>
-        <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <a href="/login" class="auth-btn login-btn">Log in</a>
+          <a href="/signup" class="auth-btn signup-btn">Sign up</a>
+        <% } else { %>
+          <a href="/logout" class="auth-btn logout-btn">Log out</a>
         <% } %>
       </div>
+
+      <!-- User Menu -->
+      <div class="user-menu" id="userMenu">
+        <button class="user-menu-btn" aria-label="User menu">
+          <i class="fa-solid fa-bars"></i>
+          <div class="user-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </button>
+        <div class="user-dropdown" id="userDropdown">
+          <% if(!currUser) {%>
+            <a href="/signup" class="dropdown-item">Sign up</a>
+            <a href="/login" class="dropdown-item">Log in</a>
+          <% } else { %>
+            <a href="/logout" class="dropdown-item">Log out</a>
+          <% } %>
+          <div class="dropdown-divider"></div>
+          <a href="/categories" class="dropdown-item">Categories</a>
+          <a href="/listings/new" class="dropdown-item">SnapTrip your home</a>
+          <a href="/help" class="dropdown-item">Help Center</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Search -->
+  <div class="mobile-search-bar">
+    <div class="mobile-search-input">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Where to?" />
     </div>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="collapse navbar-collapse mobile-nav" id="navbarNavAltMarkup">
+  <div class="mobile-nav-content">
+    <a class="mobile-nav-link" href="/listings">
+      <i class="fa-solid fa-compass"></i> Explore
+    </a>
+    <% if(!currUser) {%>
+      <a class="mobile-nav-link" href="/signup">
+        <i class="fa-solid fa-user-plus"></i> Sign up
+      </a>
+      <a class="mobile-nav-link" href="/login">
+        <i class="fa-solid fa-sign-in-alt"></i> Log in
+      </a>
+    <% } else { %>
+      <a class="mobile-nav-link" href="/logout">
+        <i class="fa-solid fa-sign-out-alt"></i> Log out
+      </a>
+    <% } %>
+    <a class="mobile-nav-link" href="/categories">
+      <i class="fa-solid fa-folder"></i> Categories
+    </a>
+    <div class="mobile-nav-divider"></div>
+    <a class="mobile-nav-link" href="/listings/new">
+      <i class="fa-solid fa-home"></i> SnapTrip your home
+    </a>
+    <a class="mobile-nav-link" href="/help">
+      <i class="fa-solid fa-circle-question"></i> Help Center
+    </a>
+  </div>
+</div>
+
+<script>
+  // Modern Navbar Controller
+  class ModernNavbar {
+    constructor() {
+      this.navbar = document.getElementById('mainNavbar');
+      this.userMenu = document.getElementById('userMenu');
+      this.userDropdown = document.getElementById('userDropdown');
+      this.themeToggle = document.getElementById('theme-toggle');
+      this.lastScrollY = window.scrollY;
+      this.init();
+    }
+
+    init() {
+      this.bindEvents();
+      this.handleScroll();
+      this.initTheme();
+    }
+
+    bindEvents() {
+      // Scroll effects
+      window.addEventListener('scroll', () => this.handleScroll());
+
+      // User menu toggle
+      if (this.userMenu) {
+        this.userMenu.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.toggleUserDropdown();
+        });
+      }
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (this.userMenu && !this.userMenu.contains(e.target)) {
+          this.userDropdown.classList.remove('show');
+        }
+      });
+
+      // Theme toggle
+      if (this.themeToggle) {
+        this.themeToggle.addEventListener('click', () => this.toggleTheme());
+      }
+    }
+
+    handleScroll() {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
+        this.navbar.classList.add('scrolled');
+      } else {
+        this.navbar.classList.remove('scrolled');
+      }
+
+      this.lastScrollY = currentScrollY;
+    }
+
+    toggleUserDropdown() {
+      this.userDropdown.classList.toggle('show');
+    }
+
+    initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      this.updateThemeIcon(savedTheme);
+    }
+
+    toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      this.updateThemeIcon(newTheme);
+    }
+
+    updateThemeIcon(theme) {
+      if (this.themeToggle) {
+        const icon = this.themeToggle.querySelector('i');
+        icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      }
+    }
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    new ModernNavbar();
+  });
+</script>
+
+

@@ -1,0 +1,587 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="cookies-header">
+                <h1>Cookie Policy</h1>
+                <p class="last-updated">Last updated: <%= new Date().toLocaleDateString() %></p>
+                <p class="lead">This Cookie Policy explains how SnapTrip uses cookies and similar technologies to enhance your browsing experience. By using our website, you consent to the use of cookies in accordance with this policy.</p>
+            </div>
+
+            <div class="cookies-overview">
+                <div class="overview-content">
+                    <h2>Your Privacy Matters</h2>
+                    <p>We respect your privacy and are committed to transparency about how we use cookies. Cookies help us provide you with a personalized and secure experience on SnapTrip.</p>
+                </div>
+                <div class="overview-features">
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Privacy First</h4>
+                        <p>We only use cookies necessary for our service and respect your choices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Easy Management</h4>
+                        <p>You have full control over your cookie preferences through our tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>Transparent Usage</h4>
+                        <p>We clearly explain what each cookie does and why we use it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cookies-content">
+                <div class="cookies-section">
+                    <h2>1. What Are Cookies</h2>
+                    <h3>1.1 Definition</h3>
+                    <p>Cookies are small text files that are stored on your computer, tablet, or mobile device when you visit our website. They contain information about your visit and are used to remember your preferences and improve your browsing experience.</p>
+
+                    <h3>1.2 Similar Technologies</h3>
+                    <p>In addition to cookies, we may use similar technologies such as:</p>
+                    <ul>
+                        <li><strong>Web beacons:</strong> Small graphic images that allow us to count visitors and track site usage</li>
+                        <li><strong>Local storage:</strong> Browser-based storage for larger amounts of data</li>
+                        <li><strong>Session storage:</strong> Temporary storage that expires when you close your browser</li>
+                    </ul>
+
+                    <h3>1.3 First and Third-Party Cookies</h3>
+                    <p>We use both first-party cookies (set by our website) and third-party cookies (set by trusted partners). Third-party cookies are subject to the respective providers' privacy policies.</p>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>2. Types of Cookies We Use</h2>
+                    <p>We categorize cookies based on their purpose and function. Here's a detailed breakdown:</p>
+
+                    <div class="cookie-types-grid">
+                        <div class="cookie-type-card">
+                            <div class="cookie-header">
+                                <i class="fas fa-lock"></i>
+                                <h3>Essential Cookies</h3>
+                            </div>
+                            <div class="cookie-details">
+                                <p><strong>Purpose:</strong> These cookies are necessary for the website to function properly and cannot be disabled.</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Authentication cookies (keeping you logged in)</li>
+                                    <li>Security cookies (preventing fraud)</li>
+                                    <li>Session cookies (maintaining your session)</li>
+                                    <li>Load balancing cookies (distributing traffic)</li>
+                                </ul>
+                                <p><strong>Duration:</strong> Session or up to 1 year</p>
+                            </div>
+                        </div>
+
+                        <div class="cookie-type-card">
+                            <div class="cookie-header">
+                                <i class="fas fa-chart-line"></i>
+                                <h3>Analytics Cookies</h3>
+                            </div>
+                            <div class="cookie-details">
+                                <p><strong>Purpose:</strong> Help us understand how visitors interact with our website to improve performance and user experience.</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Google Analytics (website traffic analysis)</li>
+                                    <li>Page view tracking</li>
+                                    <li>User journey mapping</li>
+                                    <li>Error tracking and reporting</li>
+                                </ul>
+                                <p><strong>Duration:</strong> Up to 2 years</p>
+                            </div>
+                        </div>
+
+                        <div class="cookie-type-card">
+                            <div class="cookie-header">
+                                <i class="fas fa-tools"></i>
+                                <h3>Functional Cookies</h3>
+                            </div>
+                            <div class="cookie-details">
+                                <p><strong>Purpose:</strong> Remember your preferences and settings to enhance your browsing experience.</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Language preferences</li>
+                                    <li>Location settings</li>
+                                    <li>Search filters and sorting</li>
+                                    <li>Booking form data</li>
+                                </ul>
+                                <p><strong>Duration:</strong> Up to 1 year</p>
+                            </div>
+                        </div>
+
+                        <div class="cookie-type-card">
+                            <div class="cookie-header">
+                                <i class="fas fa-bullhorn"></i>
+                                <h3>Marketing Cookies</h3>
+                            </div>
+                            <div class="cookie-details">
+                                <p><strong>Purpose:</strong> Used to deliver relevant advertisements and track the effectiveness of marketing campaigns.</p>
+                                <p><strong>Examples:</strong></p>
+                                <ul>
+                                    <li>Social media pixels (Facebook, Instagram)</li>
+                                    <li>Retargeting cookies</li>
+                                    <li>Affiliate tracking</li>
+                                    <li>Email marketing analytics</li>
+                                </ul>
+                                <p><strong>Duration:</strong> Up to 1 year</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>3. Third-Party Cookies</h2>
+                    <p>We work with trusted third-party service providers who may set cookies on our website. These include:</p>
+
+                    <div class="third-party-grid">
+                        <div class="third-party-item">
+                            <i class="fab fa-google"></i>
+                            <div>
+                                <strong>Google Analytics</strong>
+                                <p>Website performance and user behavior analysis</p>
+                            </div>
+                        </div>
+                        <div class="third-party-item">
+                            <i class="fab fa-facebook"></i>
+                            <div>
+                                <strong>Facebook Pixel</strong>
+                                <p>Social media advertising and audience insights</p>
+                            </div>
+                        </div>
+                        <div class="third-party-item">
+                            <i class="fab fa-stripe"></i>
+                            <div>
+                                <strong>Stripe</strong>
+                                <p>Secure payment processing</p>
+                            </div>
+                        </div>
+                        <div class="third-party-item">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <strong>Google Maps</strong>
+                                <p>Location services and mapping functionality</p>
+                            </div>
+                        </div>
+                        <div class="third-party-item">
+                            <i class="fab fa-cloudflare"></i>
+                            <div>
+                                <strong>Cloudflare</strong>
+                                <p>Website security and performance optimization</p>
+                            </div>
+                        </div>
+                        <div class="third-party-item">
+                            <i class="fab fa-hotjar"></i>
+                            <div>
+                                <strong>Hotjar</strong>
+                                <p>User experience and feedback collection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>4. How We Use Cookies</h2>
+                    <h3>4.1 Website Functionality</h3>
+                    <ul>
+                        <li>Maintaining your login session</li>
+                        <li>Remembering your language and currency preferences</li>
+                        <li>Saving your search filters and sorting options</li>
+                        <li>Keeping items in your booking cart</li>
+                    </ul>
+
+                    <h3>4.2 Analytics and Performance</h3>
+                    <ul>
+                        <li>Tracking page views and user journeys</li>
+                        <li>Measuring website performance and load times</li>
+                        <li>Identifying popular content and features</li>
+                        <li>Detecting and fixing technical issues</li>
+                    </ul>
+
+                    <h3>4.3 Personalization</h3>
+                    <ul>
+                        <li>Showing relevant travel recommendations</li>
+                        <li>Displaying location-based content</li>
+                        <li>Remembering your previously viewed listings</li>
+                        <li>Customizing your dashboard and notifications</li>
+                    </ul>
+
+                    <h3>4.4 Marketing and Advertising</h3>
+                    <ul>
+                        <li>Delivering targeted travel advertisements</li>
+                        <li>Measuring campaign effectiveness</li>
+                        <li>Retargeting with relevant offers</li>
+                        <li>Building audience segments for marketing</li>
+                    </ul>
+
+                    <h3>4.5 Security</h3>
+                    <ul>
+                        <li>Preventing fraudulent activities</li>
+                        <li>Detecting suspicious login attempts</li>
+                        <li>Protecting against cross-site request forgery</li>
+                        <li>Ensuring secure payment processing</li>
+                    </ul>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>5. Managing Your Cookie Preferences</h2>
+                    <h3>5.1 Cookie Settings Tool</h3>
+                    <p>You can manage your cookie preferences using our built-in cookie settings tool. Click the "Cookie Settings" link in our website footer to:</p>
+                    <ul>
+                        <li>Accept or reject different types of cookies</li>
+                        <li>View detailed information about each cookie</li>
+                        <li>Save your preferences for future visits</li>
+                        <li>Withdraw consent at any time</li>
+                    </ul>
+
+                    <h3>5.2 Browser Settings</h3>
+                    <p>You can also control cookies through your browser settings:</p>
+                    <div class="browser-instructions">
+                        <div class="browser-item">
+                            <strong>Chrome:</strong> Settings > Privacy and security > Cookies and other site data
+                        </div>
+                        <div class="browser-item">
+                            <strong>Firefox:</strong> Preferences > Privacy & Security > Cookies and Site Data
+                        </div>
+                        <div class="browser-item">
+                            <strong>Safari:</strong> Preferences > Privacy > Manage Website Data
+                        </div>
+                        <div class="browser-item">
+                            <strong>Edge:</strong> Settings > Cookies and site permissions > Cookies and site data
+                        </div>
+                    </div>
+
+                    <h3>5.3 Opt-Out Options</h3>
+                    <p>You can opt out of interest-based advertising from participating companies through:</p>
+                    <ul>
+                        <li><a href="http://optout.aboutads.info/" target="_blank">Digital Advertising Alliance</a></li>
+                        <li><a href="http://optout.networkadvertising.org/" target="_blank">Network Advertising Initiative</a></li>
+                        <li><a href="https://www.youronlinechoices.com/" target="_blank">Your Online Choices</a></li>
+                    </ul>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>6. Impact of Disabling Cookies</h2>
+                    <p>Disabling certain cookies may affect your experience on SnapTrip:</p>
+                    <ul>
+                        <li><strong>Essential cookies:</strong> Cannot be disabled - required for basic website functionality</li>
+                        <li><strong>Analytics cookies:</strong> May reduce our ability to improve the website</li>
+                        <li><strong>Functional cookies:</strong> May lose personalized settings and preferences</li>
+                        <li><strong>Marketing cookies:</strong> May see less relevant advertisements</li>
+                    </ul>
+                    <p>Some features may not work properly without certain cookies enabled.</p>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>7. Cookie Retention and Deletion</h2>
+                    <h3>7.1 Cookie Lifespan</h3>
+                    <ul>
+                        <li><strong>Session cookies:</strong> Deleted when you close your browser</li>
+                        <li><strong>Persistent cookies:</strong> Remain until deleted or expired (maximum 2 years)</li>
+                    </ul>
+
+                    <h3>7.2 Specific Durations</h3>
+                    <ul>
+                        <li>Essential cookies: Up to 1 year or until logout</li>
+                        <li>Analytics cookies: Up to 2 years</li>
+                        <li>Functional cookies: Up to 1 year</li>
+                        <li>Marketing cookies: Up to 1 year</li>
+                    </ul>
+
+                    <h3>7.3 Deleting Cookies</h3>
+                    <p>You can delete existing cookies through your browser settings or our cookie preferences tool. Note that this may log you out and reset your preferences.</p>
+                </div>
+
+                <div class="cookies-section">
+                    <h2>8. Updates to This Policy</h2>
+                    <p>We may update this Cookie Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. We will post the updated policy on this page and update the "Last updated" date.</p>
+                    <p>For material changes, we may provide additional notice through email or website notifications.</p>
+                </div>
+
+                <div class="cookies-contact">
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about this Cookie Policy or our use of cookies, please contact us:</p>
+                    <div class="contact-info">
+                        <p><strong>Privacy Team:</strong> privacy@snaptrip.com</p>
+                        <p><strong>Data Protection Officer:</strong> dpo@snaptrip.com</p>
+                        <p><strong>Support:</strong> support@snaptrip.com</p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>Address:</strong> [Company Address]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.cookies-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.cookies-header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.last-updated {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.cookies-header .lead {
+    font-size: 1.1rem;
+    color: #5a6c7d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.cookies-overview {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.overview-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.overview-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.overview-features {
+    display: flex;
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    flex: 1;
+}
+
+.feature-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.feature-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+.cookies-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cookies-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.cookies-section:last-child {
+    border-bottom: none;
+}
+
+.cookies-section h2 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.cookies-section h3 {
+    color: #34495e;
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem 0;
+    font-weight: 600;
+}
+
+.cookies-section p {
+    color: #5a6c7d;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.cookies-section ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.cookies-section li {
+    color: #5a6c7d;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.cookie-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.cookie-type-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.cookie-header {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cookie-header i {
+    color: #3498db;
+    font-size: 1.5rem;
+}
+
+.cookie-header h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.25rem;
+}
+
+.cookie-details {
+    padding: 1.5rem;
+}
+
+.cookie-details strong {
+    color: #2c3e50;
+}
+
+.third-party-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.third-party-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.third-party-item i {
+    color: #3498db;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.third-party-item strong {
+    color: #2c3e50;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.third-party-item p {
+    color: #7f8c8d;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.browser-instructions {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.browser-item {
+    margin-bottom: 0.75rem;
+    color: #5a6c7d;
+    line-height: 1.5;
+}
+
+.browser-item:last-child {
+    margin-bottom: 0;
+}
+
+.cookies-contact {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.cookies-contact h2 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    color: #5a6c7d;
+}
+
+.contact-info strong {
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .cookies-overview {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .overview-features {
+        justify-content: center;
+    }
+
+    .cookie-types-grid,
+    .third-party-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cookies-header h1 {
+        font-size: 2rem;
+    }
+
+    .cookies-content {
+        padding: 0 1rem;
+    }
+
+    .cookies-section {
+        margin-bottom: 2rem;
+    }
+}
+</style>

@@ -1,0 +1,565 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="help-header">
+                <h1>Help Center</h1>
+                <p class="lead">Find answers to common questions and get the support you need</p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="help-search">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="helpSearch" placeholder="Search for help..." class="form-control">
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <div class="action-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Contact Support</h4>
+                    <p>Get personalized help from our team</p>
+                    <a href="/contact" class="btn btn-primary">Contact Us</a>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>Browse FAQs</h4>
+                    <p>Find quick answers to common questions</p>
+                    <a href="/faq" class="btn btn-outline-primary">View FAQs</a>
+                </div>
+                <div class="action-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safety Center</h4>
+                    <p>Learn about staying safe while traveling</p>
+                    <a href="/safety" class="btn btn-outline-primary">Safety Tips</a>
+                </div>
+            </div>
+
+            <!-- Help Categories -->
+            <div class="help-categories">
+                <h2>Popular Topics</h2>
+                <div class="categories-grid">
+                    <div class="category-card" data-category="getting-started">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Getting Started</h3>
+                        <p>New to SnapTrip? Learn the basics of booking and hosting.</p>
+                    </div>
+                    <div class="category-card" data-category="booking">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Booking & Payments</h3>
+                        <p>Everything you need to know about making reservations and payments.</p>
+                    </div>
+                    <div class="category-card" data-category="hosting">
+                        <i class="fas fa-home"></i>
+                        <h3>Hosting</h3>
+                        <p>Tips and guidelines for hosting guests on SnapTrip.</p>
+                    </div>
+                    <div class="category-card" data-category="account">
+                        <i class="fas fa-user"></i>
+                        <h3>Account & Profile</h3>
+                        <p>Manage your account, profile, and privacy settings.</p>
+                    </div>
+                    <div class="category-card" data-category="traveling">
+                        <i class="fas fa-plane"></i>
+                        <h3>Traveling</h3>
+                        <p>Travel tips, requirements, and best practices.</p>
+                    </div>
+                    <div class="category-card" data-category="policies">
+                        <i class="fas fa-file-contract"></i>
+                        <h3>Policies & Rules</h3>
+                        <p>Understand our terms, cancellation policies, and community standards.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Content Sections -->
+            <div class="help-content">
+                <!-- Getting Started -->
+                <div class="help-section" id="getting-started">
+                    <h2><i class="fas fa-rocket"></i> Getting Started</h2>
+                    <div class="help-articles">
+                        <div class="article-card">
+                            <h4>How to create an account</h4>
+                            <p>Learn how to sign up for SnapTrip and verify your identity.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Navigating the platform</h4>
+                            <p>Get familiar with SnapTrip's interface and features.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Setting up your profile</h4>
+                            <p>Complete your profile to build trust with other users.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking & Payments -->
+                <div class="help-section" id="booking">
+                    <h2><i class="fas fa-calendar-check"></i> Booking & Payments</h2>
+                    <div class="help-articles">
+                        <div class="article-card">
+                            <h4>How to search and book listings</h4>
+                            <p>Step-by-step guide to finding and reserving accommodations.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Payment methods and security</h4>
+                            <p>Learn about secure payment options and fraud protection.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Modifying or canceling bookings</h4>
+                            <p>Understand your options for changing or canceling reservations.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Refunds and credits</h4>
+                            <p>How to request and receive refunds for eligible bookings.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hosting -->
+                <div class="help-section" id="hosting">
+                    <h2><i class="fas fa-home"></i> Hosting</h2>
+                    <div class="help-articles">
+                        <div class="article-card">
+                            <h4>Creating your first listing</h4>
+                            <p>Step-by-step guide to listing your property on SnapTrip.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Setting prices and availability</h4>
+                            <p>Tips for pricing your listing competitively and managing calendar.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Communicating with guests</h4>
+                            <p>Best practices for messaging and managing guest expectations.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Handling check-ins and check-outs</h4>
+                            <p>Guidelines for smooth guest arrivals and departures.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account & Profile -->
+                <div class="help-section" id="account">
+                    <h2><i class="fas fa-user"></i> Account & Profile</h2>
+                    <div class="help-articles">
+                        <div class="article-card">
+                            <h4>Updating your profile information</h4>
+                            <p>How to edit your personal details and preferences.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Privacy and security settings</h4>
+                            <p>Control who can see your information and activity.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Password and login issues</h4>
+                            <p>Troubleshooting login problems and password resets.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Deleting your account</h4>
+                            <p>Steps to permanently delete your SnapTrip account.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Traveling -->
+                <div class="help-section" id="traveling">
+                    <h2><i class="fas fa-plane"></i> Traveling</h2>
+                    <div class="help-articles">
+                        <div class="article-card">
+                            <h4>Travel requirements and documents</h4>
+                            <p>What you need to know about visas, passports, and entry requirements.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Check-in and check-out procedures</h4>
+                            <p>What to expect when arriving at and leaving your accommodation.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Local transportation and getting around</h4>
+                            <p>Tips for navigating your destination safely and efficiently.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Emergency contacts and resources</h4>
+                            <p>Important numbers and resources for emergencies while traveling.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Policies & Rules -->
+                <div class="help-section" id="policies">
+                    <h2><i class="fas fa-file-contract"></i> Policies & Rules</h2>
+                    <div class="help-articles">
+                        <div class="article-card">
+                            <h4>Community standards and conduct</h4>
+                            <p>Guidelines for respectful behavior on the SnapTrip platform.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Cancellation and refund policies</h4>
+                            <p>Detailed explanation of our cancellation terms.</p>
+                            <a href="/cancellation" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Terms of service overview</h4>
+                            <p>Key points from our terms and conditions.</p>
+                            <a href="/terms" class="read-more">Read more</a>
+                        </div>
+                        <div class="article-card">
+                            <h4>Dispute resolution</h4>
+                            <p>How to resolve conflicts between hosts and guests.</p>
+                            <a href="#" class="read-more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support CTA -->
+            <div class="contact-support">
+                <h2>Still need help?</h2>
+                <p>Can't find what you're looking for? Our support team is here to help.</p>
+                <div class="contact-options">
+                    <a href="/contact" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i> Contact Support
+                    </a>
+                    <a href="/faq" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-question-circle"></i> Browse FAQs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.help-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.help-header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.help-header .lead {
+    font-size: 1.1rem;
+    color: #5a6c7d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.help-search {
+    margin-bottom: 3rem;
+}
+
+.search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-container i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #7f8c8d;
+}
+
+.search-container input {
+    padding-left: 45px;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid #e9ecef;
+    font-size: 1rem;
+}
+
+.search-container input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.action-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-card i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.action-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.action-card p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+.help-categories {
+    margin-bottom: 4rem;
+}
+
+.help-categories h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.category-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.category-card h3 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+}
+
+.category-card p {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.help-content {
+    margin-bottom: 4rem;
+}
+
+.help-section {
+    margin-bottom: 3rem;
+    display: none;
+}
+
+.help-section.active {
+    display: block;
+}
+
+.help-section h2 {
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.help-section h2 i {
+    margin-right: 0.75rem;
+    color: #3498db;
+}
+
+.help-articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.article-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-3px);
+}
+
+.article-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.article-card p {
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.contact-support {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.contact-support h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-support p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.contact-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-options .btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+}
+
+.contact-options .btn i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .help-header h1 {
+        font-size: 2rem;
+    }
+
+    .quick-actions,
+    .categories-grid,
+    .help-articles {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-options .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Category click handlers
+    const categoryCards = document.querySelectorAll('.category-card');
+    const helpSections = document.querySelectorAll('.help-section');
+
+    categoryCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const category = this.dataset.category;
+            const targetSection = document.getElementById(category);
+
+            // Hide all sections
+            helpSections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show target section
+            if (targetSection) {
+                targetSection.classList.add('active');
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('helpSearch');
+    const articleCards = document.querySelectorAll('.article-card');
+
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+
+        articleCards.forEach(card => {
+            const title = card.querySelector('h4').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Show all sections if search is active
+        if (searchTerm.length > 0) {
+            helpSections.forEach(section => {
+                section.classList.add('active');
+            });
+        }
+    });
+});
+</script>

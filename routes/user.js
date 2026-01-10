@@ -6,6 +6,11 @@ const passport = require("passport");
 const { saveRedirectUrl } = require("../middleware.js")
 const  userController = require("../controllers/users.js");
 
+// Root route - redirect to listings
+router.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 router.route("/signup")
 .get(userController.renderSignupForm)
 .post(wrapAsync(userController.signup));
@@ -22,5 +27,13 @@ router.route("/login")
 
 
 router.get("/logout", userController.logout);
+
+// Favorites routes
+router.get("/favorites", userController.viewFavorites);
+router.post("/favorites/:id", userController.addToFavorites);
+router.delete("/favorites/:id", userController.removeFromFavorites);
+
+// Bookings route
+router.get("/bookings", userController.viewBookings);
 
 module.exports = router;

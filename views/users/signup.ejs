@@ -1,41 +1,261 @@
 <% layout("/layouts/boilerplate") %>
 
-    <body>
-        <div class="row">
-            <div class="col-6 offset-3">
-                <h1 class="col-8 offset-3 mb-3">SignUp on SnapTrip</h1>
-                <form action="/signup" method="post" class="needs-validation" novalidate>
-                        <div class="mp-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input 
-                            name="username" 
-                            id="username"
-                            type="text"
-                            class="form-control" 
-                            required />
-                            <div class="valid-feedback">Looks good!</div>
-                        </div>
+<style>
+  .auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f7;
+    padding: 2rem 1rem;
+  }
 
-                        <div class="mp-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input 
-                            name="email" 
-                            id="email"
-                            type="email"
-                            class="form-control" 
-                            required />
-                        </div>
-                        <div class="mp-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input 
-                            name="password" 
-                            id="password"
-                            type="password"
-                            class="form-control" 
-                            required />
-                        </div>
-                        <br>
-                        <button class="btn btn-success">SignUp</button>
-                    </form>
-            </div>
+  .auth-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e5e5;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .auth-header {
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .auth-header h1 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 0.5rem;
+  }
+
+  .auth-header p {
+    color: #717171;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .auth-body {
+    padding: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .form-label {
+    font-weight: 500;
+    color: #222222;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #ffffff;
+  }
+
+  .form-control:focus {
+    border-color: #fe424d;
+    box-shadow: 0 0 0 2px rgba(254, 66, 77, 0.1);
+    outline: none;
+  }
+
+  .form-control:valid {
+    border-color: #28a745;
+  }
+
+  .btn-auth {
+    background: #fe424d;
+    border: none;
+    border-radius: 8px;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    width: 100%;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(254, 66, 77, 0.2);
+  }
+
+  .btn-auth:hover {
+    background: #e63946;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(254, 66, 77, 0.3);
+  }
+
+  .auth-footer {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .auth-footer a {
+    color: #fe424d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .auth-footer a:hover {
+    color: #e63946;
+    text-decoration: underline;
+  }
+
+  .input-icon {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+  }
+
+  .password-toggle:hover {
+    color: #fe424d;
+  }
+
+  @media (max-width: 576px) {
+    .auth-card {
+      margin: 0;
+    }
+
+    .auth-header {
+      padding: 1.5rem;
+    }
+
+    .auth-body {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1>Join SnapTrip</h1>
+      <p>Create your account and start exploring amazing places</p>
+    </div>
+
+    <div class="auth-body">
+      <form action="/signup" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+          <label for="username" class="form-label">
+            <i class="fa-solid fa-user me-2"></i>Username
+          </label>
+          <div class="input-icon">
+            <input
+              name="username"
+              id="username"
+              type="text"
+              class="form-control"
+              placeholder="Choose a username"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
         </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">
+            <i class="fa-solid fa-envelope me-2"></i>Email
+          </label>
+          <div class="input-icon">
+            <input
+              name="email"
+              id="email"
+              type="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+            <div class="invalid-feedback">Please enter a valid email address.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">
+            <i class="fa-solid fa-lock me-2"></i>Password
+          </label>
+          <div class="input-icon">
+            <input
+              name="password"
+              id="password"
+              type="password"
+              class="form-control"
+              placeholder="Create a password"
+              required
+            />
+            <button type="button" class="password-toggle" id="togglePassword">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+            <div class="invalid-feedback">Please create a password.</div>
+          </div>
+        </div>
+
+        <button class="btn btn-auth" type="submit">
+          <i class="fa-solid fa-user-plus me-2"></i>Create Account
+        </button>
+      </form>
+    </div>
+
+    <div class="auth-footer">
+      <p class="mb-0">Already have an account?
+        <a href="/login">Sign in here</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Password toggle functionality
+  document.getElementById('togglePassword').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const icon = this.querySelector('i');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.classList.remove('fa-eye');
+      icon.classList.add('fa-eye-slash');
+    } else {
+      passwordInput.type = 'password';
+      icon.classList.remove('fa-eye-slash');
+      icon.classList.add('fa-eye');
+    }
+  });
+
+  // Form validation
+  (function() {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.prototype.slice.call(forms).forEach(function(form) {
+      form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>

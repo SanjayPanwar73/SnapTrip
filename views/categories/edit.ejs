@@ -1,0 +1,260 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container category-form-section">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="form-card">
+        <div class="form-header bg-warning">
+          <h2><i class="fa-solid fa-pen-to-square"></i> Edit Category</h2>
+          <p class="text-muted mb-0">Update category details</p>
+        </div>
+        
+        <form action="/categories/<%= category._id %>?_method=PUT" method="POST" class="category-form">
+          <div class="mb-4">
+            <label for="name" class="form-label">
+              <i class="fa-solid fa-tag"></i> Category Name
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="name" 
+              name="name" 
+              placeholder="Enter category name"
+              required
+              minlength="2"
+              maxlength="50"
+              value="<%= category.name %>"
+            >
+            <div class="form-text">Enter a unique name for the category (2-50 characters)</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="icon" class="form-label">
+              <i class="fa-solid fa-icons"></i> Icon Class
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-font-awesome"></i></span>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="icon" 
+                name="icon" 
+                placeholder="e.g., fa-solid fa-hotel"
+                required
+                value="<%= category.icon %>"
+              >
+            </div>
+            <div class="form-text">
+              Enter a FontAwesome icon class. 
+              <a href="https://fontawesome.com/search?m=free" target="_blank" rel="noopener">Browse icons</a>
+            </div>
+            <div class="icon-preview mt-2">
+              <span class="preview-label">Current:</span>
+              <span id="iconPreview" class="preview-icon"><i class="<%= category.icon %>"></i></span>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="form-check form-switch">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="isActive" 
+                name="isActive"
+                <%= category.isActive ? 'checked' : '' %>
+              >
+              <label class="form-check-label" for="isActive">
+                <i class="fa-solid fa-power-off"></i> Active
+              </label>
+            </div>
+            <div class="form-text">Inactive categories will not appear in filters</div>
+          </div>
+
+          <div class="mb-4">
+            <div class="info-card">
+              <i class="fa-solid fa-circle-info"></i>
+              <div>
+                <strong>Category Info</strong>
+                <p class="mb-0">
+                  Slug: <code><%= category.slug %></code><br>
+                  Created: <%= category.createdAt.toLocaleDateString() %><br>
+                  Updated: <%= category.updatedAt.toLocaleDateString() %>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-warning flex-grow-1">
+              <i class="fa-solid fa-floppy-disk"></i> Update Category
+            </button>
+            <a href="/categories" class="btn btn-outline-secondary">
+              <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Icon preview functionality
+  const iconInput = document.getElementById('icon');
+  const iconPreview = document.getElementById('iconPreview');
+  
+  iconInput.addEventListener('input', function() {
+    const iconClass = this.value.trim();
+    if (iconClass) {
+      iconPreview.innerHTML = `<i class="${iconClass}"></i>`;
+      iconPreview.style.opacity = '1';
+    } else {
+      iconPreview.innerHTML = '<i class="fa-solid fa-question"></i>';
+      iconPreview.style.opacity = '0.5';
+    }
+  });
+</script>
+
+<style>
+  .category-form-section {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .form-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .form-header {
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .form-header.bg-warning {
+    background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+  }
+  
+  .form-header h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .form-header p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .category-form {
+    padding: 2rem;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-label i {
+    margin-right: 0.5rem;
+    color: #f5af19;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    border-color: #f5af19;
+    box-shadow: 0 0 0 0.2rem rgba(245, 175, 25, 0.25);
+  }
+  
+  .input-group-text {
+    background: #f8f9fa;
+    border-right: none;
+  }
+  
+  .input-group .form-control {
+    border-left: none;
+  }
+  
+  .input-group .form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+  }
+  
+  .icon-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .preview-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .preview-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    color: #495057;
+    transition: opacity 0.3s ease;
+  }
+  
+  .form-switch .form-check-input {
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .form-switch .form-check-input:checked {
+    background-color: #f5af19;
+    border-color: #f5af19;
+  }
+  
+  .btn-warning {
+    background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+    border: none;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+  }
+  
+  .btn-warning:hover {
+    background: linear-gradient(135deg, #e59f17 0%, #e1230d 100%);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 175, 25, 0.4);
+  }
+  
+  .info-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #e7f1ff;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+  }
+  
+  .info-card i {
+    font-size: 1.25rem;
+    color: #0d6efd;
+    margin-top: 0.25rem;
+  }
+  
+  .info-card code {
+    background: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+</style>

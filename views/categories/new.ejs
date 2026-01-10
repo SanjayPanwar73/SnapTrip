@@ -1,0 +1,217 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="container category-form-section">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="form-card">
+        <div class="form-header">
+          <h2><i class="fa-solid fa-folder-plus"></i> Create New Category</h2>
+          <p class="text-muted mb-0">Add a new category to organize your listings</p>
+        </div>
+        
+        <form action="/categories" method="POST" class="category-form">
+          <div class="mb-4">
+            <label for="name" class="form-label">
+              <i class="fa-solid fa-tag"></i> Category Name
+            </label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="name" 
+              name="name" 
+              placeholder="e.g., Hotels, Restaurants, Attractions"
+              required
+              minlength="2"
+              maxlength="50"
+            >
+            <div class="form-text">Enter a unique name for the category (2-50 characters)</div>
+          </div>
+
+          <div class="mb-4">
+            <label for="icon" class="form-label">
+              <i class="fa-solid fa-icons"></i> Icon Class
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fa-solid fa-font-awesome"></i></span>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="icon" 
+                name="icon" 
+                placeholder="e.g., fa-solid fa-hotel"
+                required
+              >
+            </div>
+            <div class="form-text">
+              Enter a FontAwesome icon class. 
+              <a href="https://fontawesome.com/search?m=free" target="_blank" rel="noopener">Browse icons</a>
+            </div>
+            <div class="icon-preview mt-2">
+              <span class="preview-label">Preview:</span>
+              <span id="iconPreview" class="preview-icon"><i class="fa-solid fa-question"></i></span>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="form-check form-switch">
+              <input 
+                class="form-check-input" 
+                type="checkbox" 
+                id="isActive" 
+                name="isActive" 
+                checked
+              >
+              <label class="form-check-label" for="isActive">
+                <i class="fa-solid fa-power-off"></i> Active
+              </label>
+            </div>
+            <div class="form-text">Inactive categories will not appear in filters</div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary flex-grow-1">
+              <i class="fa-solid fa-plus"></i> Create Category
+            </button>
+            <a href="/categories" class="btn btn-outline-secondary">
+              <i class="fa-solid fa-arrow-left"></i> Back
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Icon preview functionality
+  const iconInput = document.getElementById('icon');
+  const iconPreview = document.getElementById('iconPreview');
+  
+  iconInput.addEventListener('input', function() {
+    const iconClass = this.value.trim();
+    if (iconClass) {
+      iconPreview.innerHTML = `<i class="${iconClass}"></i>`;
+      iconPreview.style.opacity = '1';
+    } else {
+      iconPreview.innerHTML = '<i class="fa-solid fa-question"></i>';
+      iconPreview.style.opacity = '0.5';
+    }
+  });
+</script>
+
+<style>
+  .category-form-section {
+    padding: 3rem 0;
+    min-height: calc(100vh - 200px);
+  }
+  
+  .form-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .form-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .form-header h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .form-header p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+  }
+  
+  .category-form {
+    padding: 2rem;
+  }
+  
+  .form-label {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-label i {
+    margin-right: 0.5rem;
+    color: #667eea;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+  }
+  
+  .input-group-text {
+    background: #f8f9fa;
+    border-right: none;
+  }
+  
+  .input-group .form-control {
+    border-left: none;
+  }
+  
+  .input-group .form-control:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+  }
+  
+  .icon-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .preview-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+  
+  .preview-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    color: #495057;
+    transition: opacity 0.3s ease;
+  }
+  
+  .form-switch .form-check-input {
+    width: 3rem;
+    height: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .form-switch .form-check-input:checked {
+    background-color: #667eea;
+    border-color: #667eea;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+</style>

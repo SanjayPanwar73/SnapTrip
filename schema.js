@@ -3,14 +3,11 @@ const joi = require("joi");
 module.exports.listingSchema = joi.object({
     listing : joi.object({
         title:joi.string().required(),
-        description:joi.string().required(),
+        description:joi.string().allow("", null),
         location:joi.string().required(),
         country:joi.string().required(),
-        price:joi.number().required().min(0),
-        image:joi.string().allow("",null),
-        category: joi.string()
-    .valid("Trending", "Room", "Iconic cities", "Mountains", "Amazing pools","Camping", "Farms", "Artic", "Domes", "Boats")
-    .required()
+        price:joi.any().required(), // Accept any type (string from form)
+        category: joi.any().required() // Accept any type (ObjectId from form)
     }).required()
 });
 

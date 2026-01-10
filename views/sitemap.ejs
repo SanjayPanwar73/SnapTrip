@@ -1,0 +1,212 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="sitemap-header">
+                <h1>Site Map</h1>
+                <p class="lead">Navigate through all the pages and sections of SnapTrip</p>
+            </div>
+
+            <div class="sitemap-content">
+                <!-- Main Navigation -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-home"></i> Main Navigation</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="/listings"><i class="fas fa-globe-americas"></i> Home</a> - Welcome to SnapTrip</li>
+                        <li><a href="/listings"><i class="fas fa-search"></i> Explore Listings</a> - Discover travel destinations</li>
+                        <li><a href="/categories"><i class="fas fa-th-large"></i> Categories</a> - Browse by category</li>
+                        <li><a href="/about"><i class="fas fa-info-circle"></i> About Us</a> - Learn more about SnapTrip</li>
+                        <li><a href="/help"><i class="fas fa-question-circle"></i> Help Center</a> - Get assistance</li>
+                        <li><a href="/contact"><i class="fas fa-envelope"></i> Contact Us</a> - Reach out to us</li>
+                    </ul>
+                </section>
+
+                <!-- Explore by Category -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-compass"></i> Explore by Category</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="/categories"><i class="fas fa-hotel"></i> Accommodations</a> - Hotels, hostels, vacation rentals</li>
+                        <li><a href="/categories"><i class="fas fa-utensils"></i> Dining</a> - Restaurants and food experiences</li>
+                        <li><a href="/categories"><i class="fas fa-camera"></i> Attractions</a> - Points of interest</li>
+                        <li><a href="/categories"><i class="fas fa-hiking"></i> Activities</a> - Tours and experiences</li>
+                    </ul>
+                </section>
+
+                <!-- Information Pages -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-book"></i> Information & Policies</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="/about"><i class="fas fa-users"></i> About Us</a> - Our mission and story</li>
+                        <li><a href="/safety"><i class="fas fa-shield-alt"></i> Safety Tips</a> - Travel safely with SnapTrip</li>
+                        <li><a href="/faq"><i class="fas fa-question"></i> FAQ</a> - Frequently asked questions</li>
+                        <li><a href="/blog"><i class="fas fa-newspaper"></i> Travel Blog</a> - Tips and stories</li>
+                        <li><a href="/cancellation"><i class="fas fa-calendar-times"></i> Cancellation Policy</a> - Booking flexibility</li>
+                        <li><a href="/privacy"><i class="fas fa-lock"></i> Privacy Policy</a> - Your data protection</li>
+                        <li><a href="/terms"><i class="fas fa-file-contract"></i> Terms of Service</a> - User agreement</li>
+                        <li><a href="/cookies"><i class="fas fa-cookie-bite"></i> Cookie Policy</a> - How we use cookies</li>
+                        <li><a href="/disclaimer"><i class="fas fa-exclamation-triangle"></i> Disclaimer</a> - General disclaimer</li>
+                    </ul>
+                </section>
+
+                <!-- User Account -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-user"></i> User Account</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="/signup"><i class="fas fa-user-plus"></i> Sign Up</a> - Create an account</li>
+                        <li><a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a> - Access your account</li>
+                        <li><a href="/favorites"><i class="fas fa-heart"></i> Favorites</a> - Saved listings</li>
+                        <li><a href="/profile"><i class="fas fa-user-cog"></i> Profile Settings</a> - Manage your account</li>
+                        <li><a href="/feedback"><i class="fas fa-comment-alt"></i> Leave Feedback</a> - Share your experience</li>
+                        <li><a href="/newsletter"><i class="fas fa-envelope-open-text"></i> Newsletter</a> - Stay updated</li>
+                    </ul>
+                </section>
+
+                <!-- Support -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-life-ring"></i> Support</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="/help"><i class="fas fa-hands-helping"></i> Help Center</a> - Comprehensive guides</li>
+                        <li><a href="/contact"><i class="fas fa-headset"></i> Contact Support</a> - Get help</li>
+                        <li><a href="/safety"><i class="fas fa-first-aid"></i> Safety Resources</a> - Emergency information</li>
+                    </ul>
+                </section>
+
+                <!-- Quick Links -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-link"></i> Quick Links</h2>
+                    <div class="quick-links-grid">
+                        <a href="/listings" class="quick-link-card">
+                            <i class="fas fa-search-location"></i>
+                            <span>Find Listings</span>
+                        </a>
+                        <a href="/categories" class="quick-link-card">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>Browse Categories</span>
+                        </a>
+                        <a href="/reviews" class="quick-link-card">
+                            <i class="fas fa-star"></i>
+                            <span>Read Reviews</span>
+                        </a>
+                        <a href="/newsletter" class="quick-link-card">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Subscribe</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.sitemap-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.sitemap-header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.sitemap-header .lead {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sitemap-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.sitemap-section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sitemap-section h2 i {
+    color: #3498db;
+}
+
+.sitemap-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sitemap-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sitemap-list li:last-child {
+    border-bottom: none;
+}
+
+.sitemap-list li i {
+    color: #3498db;
+    width: 20px;
+    text-align: center;
+}
+
+.sitemap-list a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sitemap-list a:hover {
+    color: #3498db;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.quick-link-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.quick-link-card:hover {
+    background: #3498db;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.quick-link-card i {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.quick-link-card span {
+    font-weight: 500;
+}
+</style>

@@ -1,0 +1,516 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="blog-header">
+                <h1>Travel Blog</h1>
+                <p class="lead">Discover amazing destinations, travel tips, and inspiring stories from around the world. Get inspired for your next adventure with our expert guides and traveler insights.</p>
+            </div>
+
+            <div class="blog-intro">
+                <div class="intro-content">
+                    <h2>Explore. Discover. Inspire.</h2>
+                    <p>Our travel blog is your gateway to unforgettable journeys. From hidden gems and local secrets to practical travel hacks and cultural insights, we bring you stories that inspire wanderlust and guide your adventures. Whether you're planning your first trip or seeking inspiration for your next destination, our community of travelers and experts share their experiences to help you create memories that last a lifetime.</p>
+                </div>
+                <div class="intro-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Travel Stories</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Happy Readers</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-categories">
+                <h3>Explore by Category</h3>
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">All Posts</button>
+                    <button class="category-btn" data-category="destinations">Destinations</button>
+                    <button class="category-btn" data-category="tips">Travel Tips</button>
+                    <button class="category-btn" data-category="guides">Travel Guides</button>
+                    <button class="category-btn" data-category="experiences">Experiences</button>
+                </div>
+            </div>
+
+            <div class="blog-posts">
+                <div class="blog-post-card" data-category="destinations">
+                    <div class="blog-post-image">
+                        <img src="/images/blog/europe-gems.jpg" alt="Hidden Gems in Europe" onerror="this.src='https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=250&fit=crop'">
+                        <div class="blog-category-badge">Destinations</div>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Top 10 Hidden Gems in Europe You Must Visit</h3>
+                        <p class="blog-meta">
+                            <i class="fas fa-calendar"></i> October 15, 2024 •
+                            <i class="fas fa-user"></i> Travel Expert •
+                            <i class="fas fa-clock"></i> 5 min read
+                        </p>
+                        <p>Escape the tourist crowds and discover Europe's best-kept secrets. From charming villages in the Alps to pristine beaches in the Mediterranean, these hidden gems offer authentic experiences that will create unforgettable memories.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Europe</span>
+                            <span class="tag">Hidden Gems</span>
+                            <span class="tag">Culture</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+
+                <div class="blog-post-card" data-category="tips">
+                    <div class="blog-post-image">
+                        <img src="/images/blog/budget-tips.jpg" alt="Budget Travel Tips" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=250&fit=crop'">
+                        <div class="blog-category-badge">Travel Tips</div>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Smart Budget Travel Tips for 2024</h3>
+                        <p class="blog-meta">
+                            <i class="fas fa-calendar"></i> October 10, 2024 •
+                            <i class="fas fa-user"></i> Budget Traveler •
+                            <i class="fas fa-clock"></i> 7 min read
+                        </p>
+                        <p>Travel doesn't have to break the bank. Learn practical strategies to maximize your travel budget while enjoying premium experiences. From credit card hacks to local transportation tips, discover how to travel more for less.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Budget</span>
+                            <span class="tag">Tips</span>
+                            <span class="tag">Planning</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+
+                <div class="blog-post-card" data-category="experiences">
+                    <div class="blog-post-image">
+                        <img src="/images/blog/sustainable-travel.jpg" alt="Sustainable Travel" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop'">
+                        <div class="blog-category-badge">Experiences</div>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Sustainable Travel: Making a Positive Impact</h3>
+                        <p class="blog-meta">
+                            <i class="fas fa-calendar"></i> October 5, 2024 •
+                            <i class="fas fa-user"></i> Eco Traveler •
+                            <i class="fas fa-clock"></i> 6 min read
+                        </p>
+                        <p>Travel responsibly and make a difference. Discover eco-friendly accommodations, carbon-offset programs, and ways to support local communities while exploring the world. Your journey can be both amazing and sustainable.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Sustainable</span>
+                            <span class="tag">Eco-friendly</span>
+                            <span class="tag">Impact</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+
+                <div class="blog-post-card" data-category="guides">
+                    <div class="blog-post-image">
+                        <img src="/images/blog/japan-guide.jpg" alt="Japan Travel Guide" onerror="this.src='https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=400&h=250&fit=crop'">
+                        <div class="blog-category-badge">Travel Guides</div>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Ultimate Japan Travel Guide: From Tokyo to Kyoto</h3>
+                        <p class="blog-meta">
+                            <i class="fas fa-calendar"></i> September 28, 2024 •
+                            <i class="fas fa-user"></i> Asia Explorer •
+                            <i class="fas fa-clock"></i> 10 min read
+                        </p>
+                        <p>Plan your perfect Japan itinerary with our comprehensive guide. From navigating the bullet trains to finding the best ramen spots, get insider tips for an unforgettable journey through the Land of the Rising Sun.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Japan</span>
+                            <span class="tag">Asia</span>
+                            <span class="tag">Culture</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+
+                <div class="blog-post-card" data-category="tips">
+                    <div class="blog-post-image">
+                        <img src="/images/blog/solo-travel.jpg" alt="Solo Travel Tips" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop'">
+                        <div class="blog-category-badge">Travel Tips</div>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Solo Travel Safety: Essential Tips for Women</h3>
+                        <p class="blog-meta">
+                            <i class="fas fa-calendar"></i> September 20, 2024 •
+                            <i class="fas fa-user"></i> Solo Adventurer •
+                            <i class="fas fa-clock"></i> 8 min read
+                        </p>
+                        <p>Travel solo with confidence. Learn essential safety tips, packing strategies, and mindset shifts that will help you have the adventure of a lifetime while staying safe and secure on your journey.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Solo Travel</span>
+                            <span class="tag">Safety</span>
+                            <span class="tag">Women</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+
+                <div class="blog-post-card" data-category="destinations">
+                    <div class="blog-post-image">
+                        <img src="/images/blog/iceland-winter.jpg" alt="Winter in Iceland" onerror="this.src='https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=400&h=250&fit=crop'">
+                        <div class="blog-category-badge">Destinations</div>
+                    </div>
+                    <div class="blog-post-content">
+                        <h3>Winter Wonderland: Exploring Iceland in Snow</h3>
+                        <p class="blog-meta">
+                            <i class="fas fa-calendar"></i> September 15, 2024 •
+                            <i class="fas fa-user"></i> Nordic Nomad •
+                            <i class="fas fa-clock"></i> 6 min read
+                        </p>
+                        <p>Experience Iceland's magical winter landscape. From the Northern Lights to ice caves and hot springs, discover why winter is the perfect time to visit this extraordinary island nation.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Iceland</span>
+                            <span class="tag">Winter</span>
+                            <span class="tag">Nature</span>
+                        </div>
+                        <a href="#" class="btn btn-primary">Read Full Article</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-newsletter">
+                <div class="newsletter-content">
+                    <h3>Never Miss a Travel Story</h3>
+                    <p>Subscribe to our newsletter and get the latest travel guides, destination spotlights, and exclusive tips delivered to your inbox.</p>
+                    <form class="newsletter-form" action="/newsletter/subscribe" method="POST">
+                        <div class="newsletter-input-group">
+                            <input type="email" name="email" placeholder="Enter your email address" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.blog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.blog-header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-header .lead {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.blog-intro {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.intro-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.intro-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.intro-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.blog-categories {
+    margin-bottom: 2rem;
+}
+
+.blog-categories h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    color: #6c757d;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #3498db;
+    border-color: #3498db;
+    color: white;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-post-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.blog-post-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-image img {
+    transform: scale(1.05);
+}
+
+.blog-category-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #3498db;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.blog-post-content {
+    padding: 1.5rem;
+}
+
+.blog-post-content h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.blog-meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.blog-meta i {
+    margin-right: 0.25rem;
+}
+
+.blog-post-content p {
+    color: #5a6c7d;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #f8f9fa;
+    color: #6c757d;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    color: white;
+    text-decoration: none;
+}
+
+.blog-newsletter {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.newsletter-content h3 {
+    color: #2c3e50;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.newsletter-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.newsletter-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background: #2980b9;
+}
+
+@media (max-width: 768px) {
+    .blog-intro {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .intro-stats {
+        justify-content: center;
+    }
+
+    .blog-posts {
+        grid-template-columns: 1fr;
+    }
+
+    .category-buttons {
+        justify-content: center;
+    }
+
+    .newsletter-input-group {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const blogPosts = document.querySelectorAll('.blog-post-card');
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const category = button.dataset.category;
+
+            blogPosts.forEach(post => {
+                if (category === 'all' || post.dataset.category === category) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>

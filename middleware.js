@@ -5,12 +5,19 @@ const {listingSchema,reviewSchema} = require("./schema.js");
 const ExpressError = require("./utils/ExpressError.js");
 
 module.exports.isLoggedIn = (req,res,next) =>{
-     if(!req.isAuthenticated()){
-    req.session.redirectUrl = req.originalUrl;
-    req.flash("error","You must be logged in to create listing!");
-    return res.redirect("/login");
-  };
-  next();
+    console.log("\n--- MIDDLEWARE: isLoggedIn ---");
+    console.log("req.isAuthenticated():", req.isAuthenticated());
+    console.log("req.user:", req.user);
+    console.log("Session ID:", req.sessionID);
+    
+    if(!req.isAuthenticated()){
+        console.log("ISLOGGEDIN: User NOT authenticated, redirecting to login");
+        req.session.redirectUrl = req.originalUrl;
+        req.flash("error","You must be logged in to create listing!");
+        return res.redirect("/login");
+    }
+    console.log("ISLOGGEDIN: User authenticated, proceeding...");
+    next();
 };
 
 module.exports.saveRedirectUrl = (req,res,next) =>{
@@ -32,15 +39,15 @@ module.exports.isOwner =async(req,res,next) =>{
 };
 
 
-// Error hendling
-module.exports.validateLinsting =(req,res,next) =>{
-let {error} = listingSchema.validate(req.body);
- if(error){
-  let errMsg =error.details.map((el) => el.message).join(",");
-  throw new ExpressError(404,errMsg);
- }else{
-  next();
- }
+module.exports.validateListing = (req, res, next) => {
+    console.log("VALIDATION: checking req.body");
+    let { error } = listingSchema.validate(req.body);
+    if (error) {
+        console.log("VALIDATION FAILED:", error.details[0].message);
+        return res.status(400).json({ error: "Validation error: " + error.details[0].message });
+    }
+    console.log("VALIDATION PASSED");
+    next();
 };
 
 
