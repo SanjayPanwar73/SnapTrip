@@ -218,4 +218,43 @@
       }
     });
   });
+</script> 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.querySelector('.categories-track');
+  const prevBtn = document.querySelector('.categories-nav .prev-btn');
+  const nextBtn = document.querySelector('.categories-nav .next-btn');
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const scrollAmount = 320;
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  const updateButtons = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth;
+
+    prevBtn.style.display =
+      track.scrollLeft <= 5 ? 'none' : 'flex';
+
+    nextBtn.style.display =
+      track.scrollLeft >= maxScroll - 5 ? 'none' : 'flex';
+  };
+
+  track.addEventListener('scroll', updateButtons);
+  updateButtons();
+});
 </script>
