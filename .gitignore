@@ -118,4 +118,10 @@ build/
 
 # Rust
 target/
+
+# Node modules
+node_modules/
+
+# Uploads
+uploads/
 ```
