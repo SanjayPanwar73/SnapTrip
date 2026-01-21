@@ -22,7 +22,7 @@ const categorySchema = new Schema({
 }, { timestamps: true });
 
 // Create slug from name before saving
-categorySchema.pre('save', function(next) {
+categorySchema.pre('save', async function() {
   // Generate slug if name is modified OR if this is a new document
   if ((this.isModified('name') || this.isNew) && this.name) {
     this.slug = this.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
@@ -31,7 +31,7 @@ categorySchema.pre('save', function(next) {
   if (!this.slug) {
     this.slug = 'category-' + Date.now();
   }
-  next();
+  // No next() needed for async pre hooks
 });
 
 // Note: slug and name already have indexes from unique: true
