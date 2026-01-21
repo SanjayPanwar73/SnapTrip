@@ -12,8 +12,8 @@ router.get("/", (req, res) => {
 });
 
 router.route("/signup")
-.get(userController.renderSignupForm)
-.post(wrapAsync(userController.signup));
+    .get(userController.renderSignupForm)
+    .post(userController.signup);
 
 
 router.route("/login")

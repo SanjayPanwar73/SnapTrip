@@ -13,6 +13,7 @@
   "author": "sanjay panwar",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cloudinary": "^1.21.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
@@ -20,7 +21,7 @@
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
-    "express": "^4.21.2",
+    "express": "^4.22.1",
     "express-session": "^1.18.1",
     "joi": "^17.13.3",
     "leaflet": "^1.9.4",

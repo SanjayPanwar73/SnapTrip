@@ -1,28 +1,35 @@
 const User = require("../models/user.js");
+const bcrypt = require('bcrypt');
 
 module.exports.renderSignupForm = (req, res) => {
-    res.render("users/signup.ejs")
+    res.render("users/signup.ejs");
 };
 
 module.exports.signup = async (req, res) => {
+    console.log("Signup called with:", req.body);
     try {
-        let { username, email, password } = req.body;
-        const newUser = new User({ email, username });
-        const registerUser = await User.register(newUser, password);
-        console.log(registerUser);
-        req.login(registerUser, (err) => {
+        const { username, email, password } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const newUser = new User({ email, username, password: hashedPassword });
+        await newUser.save();
+        req.login(newUser, (err) => {
             if (err) {
-                return next(err);
+                req.flash("error", err.message);
+                return res.redirect("/signup");
             }
+            console.log("\n--- SIGNUP: User registered and logged in ---");
+            console.log("req.isAuthenticated():", req.isAuthenticated());
+            console.log("req.user:", req.user);
+            console.log("Session ID:", req.sessionID);
+            console.log("SIGNUP: User authenticated, proceeding...");
             req.flash("success", "Welcome to SnapTrip!");
             res.redirect("/listings");
-        })
-
+        });
     } catch (e) {
+        console.log("Signup error:", e.message);
         req.flash("error", e.message);
         res.redirect("/signup");
     }
-
 };
 
 
@@ -31,11 +38,10 @@ module.exports.renderLoginForm = (req, res) => {
 };
 
 
-module.exports.login = async (req, res) => {
+module.exports.login = async (req, res, next) => {
     req.flash("success", "Welcome back to SnapTrip!");
     let redirectUrl = res.locals.redirectUrl || "/listings";
     res.redirect(redirectUrl);
-
 };
 
 

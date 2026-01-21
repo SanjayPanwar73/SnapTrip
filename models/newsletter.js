@@ -20,7 +20,6 @@ const newsletterSchema = new Schema({
 });
 
 // Add indexes for better query performance
-newsletterSchema.index({ email: 1 });
 newsletterSchema.index({ isActive: 1 });
 newsletterSchema.index({ subscribedAt: -1 });
 

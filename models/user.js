@@ -1,9 +1,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new Schema({
     email:{
+        type: String,
+        required: true,
+    },
+    username: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    password: {
         type: String,
         required: true,
     },
@@ -14,9 +22,9 @@ const userSchema = new Schema({
 });
 
 // Add indexes for better query performance
-// Note: email index is automatically added by passport-local-mongoose
 userSchema.index({ favorites: 1 });
+userSchema.index({ username: 1 });
+userSchema.index({ email: 1 });
 
-userSchema.plugin(passportLocalMongoose);//its automaticly add username and password
 module.exports = mongoose.model('User', userSchema);
 
